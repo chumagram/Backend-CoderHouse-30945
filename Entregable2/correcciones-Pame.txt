@@ -1,0 +1,4 @@
+El desafío pedia 3 archivos "uno de test", "otro donde se guarde el objeto" y "otro de test". En tu código está todo en el mismo archivo.
+
+Noto que en el método save() no pasa lo que con los demás. Guardás almacen entonces cuando yo llevo adelante tu código con un nuevo producto me lo guarda con id 3 pero siempre queda ahi no va agregando mas, sólo guarda almacen y ese producto una vez.
+Tendrias que poder ir guardando uno y otro y otro producto. Cómo lo cambiarías en el código? En la última clase a final de la clase el profe lleva a cabo esto que te indico.
