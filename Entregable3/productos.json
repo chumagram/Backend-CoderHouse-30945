@@ -1,0 +1,20 @@
+[
+    {
+      "title": "libreta",
+      "price": 380,
+      "thumbnail": "google.com/img_libreta",
+      "id": 1
+    },
+    {
+      "title": "resaltador",
+      "price": 150,
+      "thumbnail": "google.com/imagen_resaltador",
+      "id": 2
+    },
+    {
+      "title": "lapicera",
+      "price": 120,
+      "thumbnail": "google.com/imagen_lapicera",
+      "id": 20
+    }
+]
