@@ -1,0 +1,50 @@
+[
+  {
+    "title": "libreta",
+    "price": 380,
+    "thumbnail": "google.com/img_libreta",
+    "id": 1
+  },
+  {
+    "title": "resaltador",
+    "price": 150,
+    "thumbnail": "google.com/imagen_resaltador",
+    "id": 2
+  },
+  {
+    "title": "lapicera",
+    "price": 120,
+    "thumbnail": "google.com/imagen_lapicera",
+    "id": 20
+  },
+  {
+    "title": "cartulina",
+    "price": 80,
+    "thumbnail": "google.com/img_cartulina",
+    "id": 21
+  },
+  {
+    "title": "Cartulina",
+    "price": "345",
+    "thumbnail": "google.com/cartulina_cartulina",
+    "id": 22
+  },
+  {
+    "title": "Cartulina",
+    "price": "345",
+    "thumbnail": "google.com/cartulina_cartulina",
+    "id": 23
+  },
+  {
+    "title": "Cartulina",
+    "price": "345",
+    "thumbnail": "google.com/cartulina_cartulina",
+    "id": 24
+  },
+  {
+    "title": "cartulina",
+    "price": 80,
+    "thumbnail": "google.com/img_cartulina",
+    "id": 25
+  }
+]

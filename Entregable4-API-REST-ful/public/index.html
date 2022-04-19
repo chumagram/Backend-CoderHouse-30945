@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1 id="azul">ENTREGABLE n°4 - API-REST-FUL</h1>
+    <h2 class="rojo">FORMULARIO PARA AGREGAR UN NUEVO PRODUCTO</h2>
+
+    <!-- <form action="/api/productos/" method="get">
+        <fieldset>
+            <input type="submit" value="VER TODOS LOS PRODUCTOS">
+        </fieldset>
+    </form> -->
+
+    <!-- <form action="/api/productos/" method="get">
+        <fieldset>
+            <label for="id">SOLICITAR PRODUCTO CON ID</label><input type="number" name="id"><br>
+            <input type="submit" value="ENVIAR">
+        </fieldset>
+    </form> -->
+
+    <form action="/api/productos" method="post">
+        <fieldset>
+            <legend>INGRESE LOS DATOS DEL PRODUCTO NUEVO:</legend>
+            <div>
+                <label for="title">TÍTULO </label><input type="text" name="title"><br>
+                <label for="price">PRECIO </label><input type="number" name="price"><br>
+                <label for="thumbnail">THUMBNAIL </label><input type="text" name="thumbnail"><br>
+                <input type="submit" value="ENVIAR" id="boton">
+            </div>
+        </fieldset>
+    </form><br>
+
+    <footer>
+        <p>
+            Estudiante: GRAMAJO, Gonzalo Leonel <br/>
+            Comisión: 30945
+        </p>
+    </footer>
+
+    <script src="/static/js/index.js"></script>
+</body>
+</html>

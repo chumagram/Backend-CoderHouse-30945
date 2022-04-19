@@ -3,12 +3,12 @@ const fs = require('fs');
 class Contenedor {
 
     constructor(nameArchivo){
-        this.dir = "./scrips/" + nameArchivo;
+        this.dir = __dirname + "/" + nameArchivo;
         this.JSONcheck();
         this.lastID;
     }
 
-    static workArchive = './scrips/archivoWork.json';
+    static workArchive = __dirname + '/archivoWork.json';
 
     JSONcheck(){
         let str;
@@ -62,7 +62,8 @@ guarda ese ID en lastID para su posterior uso en los demás módulos. */
             }
         });
         if(objectAux === undefined){
-            return console.log(`El ID ${number} no existe.`);;
+            console.log(`El ID ${number} no existe.`);
+            return { error : 'producto no encontrado' }
         } else {
             console.log('Objeto solicitado: \n',objectAux);
             return objectAux;
@@ -89,10 +90,12 @@ guarda ese ID en lastID para su posterior uso en los demás módulos. */
         let idObject = array.findIndex(object => object.id === number);
         if (idObject === -1){
             console.log('El indice indicado no existe');
+            return { error : 'producto no encontrado' }
         } else {
             array.splice(idObject, 1);
             fs.writeFileSync(Contenedor.workArchive, JSON.stringify(array, null, 2));
             console.log(`El objeto con ID ${number} fue eliminado exitosamente.`);
+            return { hecho : `El objeto con ID ${number} fue eliminado exitosamente.` }
         }
     }
 
@@ -109,11 +112,14 @@ guarda ese ID en lastID para su posterior uso en los demás módulos. */
     updateById(numero, objeto){
         let array = JSON.parse(fs.readFileSync(Contenedor.workArchive, 'utf-8'));
         let indexObj = array.findIndex(element => element.id === numero);
-        objeto.id = numero;
-        array[indexObj] = objeto;
-        fs.writeFileSync(Contenedor.workArchive, JSON.stringify(array,null,2));
-        //console.log(`Objeto actualizado con id ${numero}`);
-        return objeto;
+        if (indexObj === -1){
+            return { error : 'producto no encontrado' }
+        } else {
+            objeto.id = numero;
+            array[indexObj] = objeto;
+            fs.writeFileSync(Contenedor.workArchive, JSON.stringify(array,null,2));
+            return objeto;
+        }
     }
 }
 

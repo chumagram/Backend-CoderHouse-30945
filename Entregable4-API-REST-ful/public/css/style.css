@@ -1,0 +1,42 @@
+body{
+    background-color: rgb(30, 30, 30);
+    font-family: Verdana;
+}
+
+.rojo{
+    color: rgb(255, 169, 143);
+    text-align: center;
+}
+
+#azul {
+    color: rgb(81, 78, 255);
+    text-align: center;
+    font-weight: bold;
+}
+
+footer {
+    align-self: flex-end;
+    line-height: 1.5;
+    text-align: center;
+    width: 100%;
+    color: rgb(255, 255, 255);
+}
+
+fieldset {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    line-height: 2;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 2px dashed white;
+}
+
+legend {
+    line-height: 3;
+    font-weight: bold;
+}
+
+input{
+    border-radius: 5px;
+}
