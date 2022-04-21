@@ -1,0 +1,104 @@
+[
+  {
+    "title": "libreta",
+    "price": 380,
+    "thumbnail": "google.com/img_libreta",
+    "id": 1
+  },
+  {
+    "title": "resaltador",
+    "price": 150,
+    "thumbnail": "google.com/imagen_resaltador",
+    "id": 2
+  },
+  {
+    "title": "lapicera",
+    "price": 120,
+    "thumbnail": "google.com/imagen_lapicera",
+    "id": 20
+  },
+  {
+    "title": "cartulina",
+    "price": 80,
+    "thumbnail": "google.com/img_cartulina",
+    "id": 80
+  },
+  {
+    "title": "Cartulina",
+    "price": "345",
+    "thumbnail": "google.com/cartulina_cartulina",
+    "id": 22
+  },
+  {
+    "title": "Cartulina",
+    "price": "345",
+    "thumbnail": "google.com/cartulina_cartulina",
+    "id": 23
+  },
+  {
+    "title": "Cartulina",
+    "price": "345",
+    "thumbnail": "google.com/cartulina_cartulina",
+    "id": 24
+  },
+  {
+    "title": "cartulina",
+    "price": 80,
+    "thumbnail": "google.com/img_cartulina",
+    "id": 25
+  },
+  {
+    "title": "",
+    "price": "",
+    "thumbnail": "",
+    "id": 26
+  },
+  {
+    "title": "Hffklndsñon",
+    "price": "10000",
+    "thumbnail": "asdasdasdasd/asd",
+    "id": 27
+  },
+  {
+    "title": "Chino",
+    "price": "10000",
+    "thumbnail": "asdasdasdasd/asd",
+    "id": 81
+  },
+  {
+    "title": "Xiaomi",
+    "price": "200",
+    "thumbnail": "gogle/google(xiomi",
+    "id": 82
+  },
+  {
+    "title": "Chino",
+    "price": "9000000000",
+    "thumbnail": "gogle/google(xiomi",
+    "id": 83
+  },
+  {
+    "title": "Google",
+    "price": "5600000000000000",
+    "thumbnail": "goggle",
+    "id": 84
+  },
+  {
+    "title": "asdasdasd",
+    "price": "123123213",
+    "thumbnail": "qweqwewqe",
+    "id": 85
+  },
+  {
+    "title": "Chino3",
+    "price": "67000000",
+    "thumbnail": "asdasdasdasd/asd",
+    "id": 86
+  },
+  {
+    "title": "Chumastaiguer",
+    "price": "56",
+    "thumbnail": "1234567890/img",
+    "id": 87
+  }
+]

@@ -1,0 +1,14 @@
+{{!-- main.hbs --}}
+
+<form action="/productos" method="post">
+    <fieldset>
+        <legend>INGRESE LOS DATOS DEL PRODUCTO NUEVO:</legend>
+        <div>
+            <label for="title">TÍTULO </label><input type="text" name="title" required><br>
+            <label for="price">PRECIO </label><input type="number" name="price" required><br>
+            <label for="thumbnail">THUMBNAIL </label><input type="text" name="thumbnail" required><br>
+            <input type="submit" value="ENVIAR" id="boton">
+        </div>
+    </fieldset>
+</form><br>
+<a href='/productos'><button> VER TODOS LOS PRODUCTOS </button></a>

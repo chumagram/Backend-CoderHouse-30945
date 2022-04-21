@@ -1,0 +1,18 @@
+{{!-- all.hbs --}}
+
+{{#if listExists}}
+    <table>
+        <tr>
+            <th>Título</th><th>Precio</th><th>ID</th>
+        </tr>
+        {{#each TodosLosProductos}}
+            <tr>
+                <td class="{{this.id}}">{{this.title}}</td>
+                <td class="{{this.id}}">{{this.price}}</td>
+                <td class="{{this.id}}">{{this.id}}</td>
+            </tr>
+        {{/each}}
+    </table>
+{{/if}}
+
+<a href='/'><button> INGRESAR PRODUCTO </button></a>
