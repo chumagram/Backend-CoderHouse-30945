@@ -1,0 +1,41 @@
+html
+    head
+        style.
+            body{
+                background-color: rgb(30, 30, 30);
+                font-family: Arial;
+                text-align: center;
+                color: rgb(255, 255, 255);}
+            table{
+                border: 2px solid white;
+                width: 50%;
+                margin: 0 auto;}
+            fieldset {
+                color: rgb(255, 255, 255);
+                line-height: 3;
+                border-top: 0px;
+                border-left: 0px;
+                border-right: 0px;
+                border-bottom: 2px dashed white;}       
+            legend {
+                line-height: 3;
+                font-weight: bold;}
+            input{
+                border-radius: 5px;}
+        title='Inicio'
+    body
+        h1=mensaje
+        fieldset
+            form(action="/productos",method="post")
+                label(for="title")="Título"
+                input(type="text",name="title",required)
+                br
+                label(for="price")="Precio"
+                input(type="numer",name="price",required)
+                br
+                label(for="thumbnail")="Thumbnail"
+                input(type="text",name="thumbnail",required)
+                br
+                input(type="submit",value="ENVIAR",id="boton")
+        a(href='/productos')
+            button="LISTA DE PRODUCTOS"

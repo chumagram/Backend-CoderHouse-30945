@@ -1,0 +1,16 @@
+{
+  "name": "ejsproduct",
+  "version": "1.0.0",
+  "description": "Entregable 5 - EJS",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Gonzalo Gramajo",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.7",
+    "express": "^4.17.3"
+  }
+}

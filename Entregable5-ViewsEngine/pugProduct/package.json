@@ -1,0 +1,16 @@
+{
+  "name": "pugproduct",
+  "version": "1.0.0",
+  "description": "entregable 5 usando pug",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Gonzalo Gramajo",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3",
+    "pug": "^3.0.2"
+  }
+}
