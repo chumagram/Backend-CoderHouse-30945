@@ -73,17 +73,7 @@ html
             h1='Entregable 5 - Pug'
             hr
             br
-        table
-            tr
-                th="NOMBRE"
-                th="PRECIO"
-                th="IMAGEN"
-            each p in array
-                tr
-                    td=p.title
-                    td="$"+p.price
-                    td
-                        img(src=p.thumbnail,alt="imagen de "+p.title)
+        p(class="avisos")="NO HAY PRODUCTOS DISPONIBLES"
         br
         a(href='/')
             button INGRESAR PRODUCTO

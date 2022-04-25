@@ -29,11 +29,9 @@ app.use('/static', express.static(__dirname + '/public'));
 
 /******FIN DE LAS CONFIGURACIONES******/
 
-
 app.get('/', function (req, res) {
     res.render('main');    
 })
-//{ suggestedChamps: fakeApi(), listExists: true }
 
 // INGRESAR UN PRODUCTO
 router.post('/',(req,res)=>{
@@ -46,28 +44,13 @@ router.post('/',(req,res)=>{
 // MOSTRAR TODOS LOS PRODUCTOS
 router.get('/',(req,res)=>{
     let array = () => contenedor.getAll();
-    console.log('Todos los productos disponibles:\n',array);
-    res.render('all', { TodosLosProductos: array(), listExists: true });
-})
-
-router.get('/:id',(require,response)=>{
-    let objeto = contenedor.getById(parseInt(require.params.id));
-    console.log(objeto);
-    response.json(objeto);
-})
-
-router.put('/:id',(require,response)=>{
-    let id = require.params.id;
-    let actualizar = require.body;
-    let newObject = contenedor.updateById(id,actualizar);
-    console.log('Objeto actualizado:\n',newObject);
-    response.json({'Objeto actualizado': newObject});
-})
-
-router.delete('/:id',(require,response)=>{
-    let id = require.params.id;
-    let str = contenedor.deleteById(id);
-    response.json(str);
+    console.log('Todos los productos disponibles:\n',array());
+    if (array().length == 0){
+        res.render('all', { listExists: false });
+    } else {
+        console.log(array().length);
+        res.render('all', { TodosLosProductos: array(), listExists: true });
+    }
 })
 
 // LEVANTAR EL SERVIDOR

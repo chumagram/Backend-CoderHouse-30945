@@ -33,8 +33,13 @@ router.post('/',(req,res)=>{
 // MOSTRAR TODOS LOS PRODUCTOS
 router.get('/',(req,res)=>{
     let array = contenedor.getAll();
-    console.log('Todos los productos disponibles:\n',array);
-    res.render('pages/all', {array: array});
+    console.log(array.length);
+    if (array.length == 0){
+        res.render('pages/sindatos.ejs', {array: array});
+    } else {
+        console.log('Todos los productos disponibles:\n',array);
+        res.render('pages/all', {array: array});
+    }
 })
 
 // LEVANTAR EL SERVIDOR

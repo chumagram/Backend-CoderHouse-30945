@@ -3,28 +3,75 @@ html
         style.
             body{
                 background-color: rgb(30, 30, 30);
-                font-family: Arial;
-                text-align: center;
-                color: rgb(255, 255, 255);}
-            table{
-                border: 2px solid white;
-                width: 50%;
-                margin: 0 auto;}
-            fieldset {
+                font-family: Verdana;
                 color: rgb(255, 255, 255);
-                line-height: 3;
+                text-align: center;
+            }
+            footer {
+                line-height: 1.5;
+                font-size: x-small;
+            }
+            hr {
+                background-color: rgb(255, 255, 255);
+            }
+            fieldset {
+                font-size: 20px;
+                line-height: 2;
                 border-top: 0px;
                 border-left: 0px;
                 border-right: 0px;
-                border-bottom: 2px dashed white;}       
+                border-bottom: 2px white;
+            }
             legend {
+                font-size: 20px;
                 line-height: 3;
-                font-weight: bold;}
+                font-weight: bold;
+            }
+            table {
+                font-size: 20px;
+                border: 2px solid white;
+                width: 50%;
+                margin: 0 auto;
+            }
             input{
-                border-radius: 5px;}
+                font-size: 20px;
+                border-radius: 10px;
+            }
+            button {
+                padding: 10px;
+                font-size:20px;
+                border-radius: 10px;
+            }
+            table {
+                width: 100%;
+                border: 1px solid #000;
+            }
+            th, td {
+                width: 25%;
+                text-align: center;
+                vertical-align: center;
+                border: 1px solid white;
+                border-collapse: collapse;
+                padding: 0.3em;
+            }
+            caption {
+                padding: 0.3em;
+            }
+            img {
+                max-width: 20%;
+            }
+            .avisos{
+                margin: 0 auto;
+                width: 20%;
+                padding: 30px;
+                background-color: rgb(125, 104, 0);
+            }
         title='Inicio'
     body
-        h1=mensaje
+        header
+            hr
+            h1=mensaje
+            hr
         fieldset
             form(action="/productos",method="post")
                 label(for="title")="Título"
@@ -39,3 +86,10 @@ html
                 input(type="submit",value="ENVIAR",id="boton")
         a(href='/productos')
             button="LISTA DE PRODUCTOS"
+        footer
+            br
+            br
+            hr
+            p='© Copyright 2022 - Gonzalo Leonel Gramajo'
+            p='Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum debitis, doloremque adipisci ipsum, pariatur, quod ab labore reprehenderit obcaecati facilis odit. Sint illo nisi harum blanditiis repellat iure, explicabo est. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus, magni libero? Laudantium illum quibusdam laborum magni blanditiis numquam tempora consequuntur in, nihil nulla porro? Autem numquam tempora necessitatibus nesciunt dolorum! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni aliquam ratione officia iure aliquid! Aperiam neque atque nulla impedit deserunt nihil, hic maxime necessitatibus eius et similique accusamus placeat modi. lorem ipsum dolor sit amet lorem.'
+            p='Contacto: gramajogonzalo@gmail.com'

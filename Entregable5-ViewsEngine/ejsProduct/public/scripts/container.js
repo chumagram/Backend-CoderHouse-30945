@@ -81,7 +81,7 @@ guarda ese ID en lastID para su posterior uso en los demás módulos. */
         if (flag === true){
             return todo;
         } else if (flag === false){
-            return 'error con al mostrar todos los objetos';
+            return 'error al mostrar todos los objetos';
         }
     }
 

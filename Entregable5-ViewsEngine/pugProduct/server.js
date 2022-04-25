@@ -34,8 +34,13 @@ router.post('/',(req,res)=>{
 // MOSTRAR TODOS LOS PRODUCTOS
 router.get('/',(req,res)=>{
     let array = () => contenedor.getAll();
-    console.log('Todos los productos disponibles:\n',array);
-    res.render('all.pug', {array: array()});
+    if (array().length == 0){
+        res.render('sindatos.pug');
+    } else {
+        console.log('Todos los productos disponibles:\n',array());
+        res.render('all.pug', {array: array()});
+    }
+    
 })
 
 // LEVANTAR EL SERVIDOR

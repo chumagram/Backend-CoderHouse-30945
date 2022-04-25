@@ -1,0 +1,14 @@
+<table>
+    <tr>
+        <th>NOMBRE</th>
+        <th>PRECIO</th>
+        <th>IMAGEN</th>
+    </tr>
+    <% array.forEach(function(array) { %>
+        <tr>
+            <td><%= array.title %></td>
+            <td>$<%= array.price %></td>
+            <td><img src=<%= array.thumbnail %> alt="imagen de <%= array.title %>"></td>
+        </tr>
+    <% }); %> 
+</table>
