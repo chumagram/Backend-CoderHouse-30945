@@ -1,0 +1,16 @@
+{
+  "name": "entregable6-websockets",
+  "version": "1.0.0",
+  "description": "Entregable 6 para el curso de Coder House",
+  "main": "\u001b[D\u001b[D\u001b[D\u001bserver\u001b[C\u001b[D.js)",
+  "scripts": {
+    "test": "\u001a"
+  },
+  "author": "Gonzalo Gramajo",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.7",
+    "express": "^4.17.3",
+    "socket.io": "^4.5.0"
+  }
+}
