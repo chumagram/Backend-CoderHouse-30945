@@ -1,5 +1,6 @@
 const express = require('express');
-const contenedor = require('./public/scripts/container.js');
+const contenedor = require('./public/modules/MyContainer/container.js');
+const mensajes = require('./public/modules/MyMessages/messageManager.js');
 const { Server: HttpServer } = require('http');
 const { Server: IOServer } = require('socket.io');
 
@@ -18,38 +19,26 @@ app.use('/static', express.static(__dirname + '/public'));
 // PAGINA RAIZ
 app.get('/', function (req, res) {
     res.render('pages/index');    
-})
+});
 
 // CONEXION SOCKET
 io.on('connection', (socket) => {
     console.log('¡Nuevo cliente conectado!');
-    let array = contenedor.getAll();
-    socket.emit('array', array);
-    socket.on('new-message', data => {
-        messages.push(data);
-        io.sockets.emit('messages', messages);
+    let productos = contenedor.getAll();
+    socket.emit('mensajeria', mensajes.allMessages());
+    socket.emit('productos', productos);
+
+    // Manejo de nuevo producto
+    socket.on('new-product', data => {
+        contenedor.save(data);
+        io.sockets.emit('productos', productos);
     })
-})
-
-// INGRESAR UN PRODUCTO
-/* router.post('/',(req,res)=>{
-    let agregar = req.body;
-    console.log('Producto a agregar:\n',agregar);
-    let newId = contenedor.save(agregar);
-    res.redirect('back');
-}) */
-
-// MOSTRAR TODOS LOS PRODUCTOS
-/* router.get('/',(req,res)=>{
-    let array = contenedor.getAll();
-    console.log(array.length);
-    if (array.length == 0){
-        res.render('pages/sindatos.ejs', {array: array});
-    } else {
-        console.log('Todos los productos disponibles:\n',array);
-        res.render('pages/all', {array: array});
-    }
-}) */
+    // manejo de nuevo mensaje
+    socket.on('new-message', data => {
+        mensajes.addMessage(data);
+        io.sockets.emit('mensajeria', mensajes.allMessages());
+    })
+});
 
 // LEVANTAR EL SERVIDOR
 const connectedServer = httpServer.listen(PORT, () => {
