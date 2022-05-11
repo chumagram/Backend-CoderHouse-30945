@@ -1,0 +1,34 @@
+[
+    {
+      "name": "Sable laser",
+      "price":120,
+      "stock": 109,
+      "code": 123456987234,
+      "description":"Tremendo sable laser re fachero, original que lo uso darth vader para exterminar jedis en la orden 66.",
+      "thumbnail": "https://as.com/meristation/imagenes/2021/05/05/betech/1620209195_059699_1620209343_sumario_grande.jpg"
+    },
+    {
+      "name": "Peluche de Grogu",
+      "price":80,
+      "stock": 40,
+      "code": 568734765698,
+      "description":"La cosa mas tierna que veras en tu vida y de toda la galaxia basicamente.",
+      "thumbnail": "https://m.media-amazon.com/images/I/81-ustlVcwL._AC_SX569_.jpg"
+    },
+    {
+      "name": "Casco de Darth Vader",
+      "price":50,
+      "stock": 786,
+      "code": 457656982376,
+      "description":"Casco de darth vader que uso en la mismísima batalla de Mandalord, fue testigo la mera destruccion del mismo. Pobre Mandalord",
+      "thumbnail": "https://m.media-amazon.com/images/I/71TSNMmfWuL._AC_SL1321_.jpg"
+    },
+    {
+      "name": "X-wing",
+      "price":234,
+      "stock": 324,
+      "code": 458756983487,
+      "description":"La nave mas fachera que existe, es analogo a tener un Buggati, pero interestelar, sisi, interestelar, porque tiene un hiperpropulsor re fachero.",
+      "thumbnail": "https://m.media-amazon.com/images/I/610wKANTT5L._AC_SL1500_.jpg"
+    }
+]

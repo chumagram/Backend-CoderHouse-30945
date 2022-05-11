@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use('/static', express.static(__dirname + '/public'));
 
-/*******************  FIN DE LAS CONFIGURACIONES  *****************/
+/*******************  FIN DE LAS CONFIGURACIONES  *******************/
 
 // PAGINA RAIZ
 app.get('/', function (req, res) {
