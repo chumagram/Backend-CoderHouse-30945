@@ -1,0 +1,72 @@
+[
+    {
+        "name":"Pringles",
+        "price":380,
+        "thumbnail":"http://www.pringles.com/",
+        "stock":6789,
+        "description":"Papas fritas muy riquitas"
+    },
+    {
+        "name":"Gringuitas",
+        "price":123,
+        "thumbnail":"http://www.griguitas.com/",
+        "stock":736,
+        "description":"Papas fritas llenas de aceite"
+    },
+    {
+        "name":"Lays",
+        "price":432,
+        "thumbnail":"http://www.lays.com/",
+        "stock":653,
+        "description":"Papas fritas sobre valoradas"
+    },
+    {
+        "name":"Redragon USAS",
+        "price":2500,
+        "thumbnail":"http://www.redragon.com/",
+        "stock":123,
+        "description":"Teclado mecanico re fachero"
+    },
+    {
+        "name":"AMD Ryzen 3 2200G",
+        "price":4999,
+        "thumbnail":"http://www.amd.com/",
+        "stock":2346,
+        "description":"Microprocesador precio calidad"
+    },
+    {
+        "name":"Webcam Redragon",
+        "price":4372,
+        "thumbnail":"http://www.redragon.com/webcam/",
+        "stock":3456,
+        "description":"Webcam precio calidad"
+    },
+    {
+        "name":"Tomate",
+        "price":200,
+        "thumbnail":"http://www.tomate.com/",
+        "stock":4357,
+        "description":"Tomate natural rojitos y bellos"
+    },
+    {
+        "name":"Espinaca por atado",
+        "price":75634,
+        "thumbnail":"http://www.espinacaenatado.com/",
+        "stock":345,
+        "description":"Espinaca atada con una cuerda"
+    },
+    {
+        "name":"Estaño para soldar",
+        "price":456,
+        "thumbnail":"http://www.estañoconplomo.com/",
+        "stock":567,
+        "description":"Estaño con punto de fusión elevado y muchisimo plomo para que reniegues mucho"
+    },
+    {
+        "name":"Arduino NANO",
+        "price":4879,
+        "thumbnail":"http://www.arduinonano.com/",
+        "stock":567,
+        "description":"Arduino caro, porque esta hecho con pistas de plata para maximizar la conductividad"
+    }
+]
