@@ -30,35 +30,52 @@ class Contenedor {
     }
 
 /* ----- Metodo que devuelve un objeto segun su id ----- */
-    async getById(id) {
-        try {
-            const contenido = await this.knexCall().from(this.tableName)
-            .select('*').where('id', '=', id);
-
-            console.log({contenido});
-
-            if (contenido.length === 0) {
-                return null;
-            } else {
-                return contenido[0];
-            }
-        } catch (error) {
-            console.error('Error:', error);
+    async getById(idObject){
+        let devolver;
+        const getProduct = (knex) => {
+            return new Promise((resolve, reject) => {
+                knex(this.tableName).where({id:idObject}).select("id", "title",  "price", "stock")
+                .then( (result) => {
+                    console.log(`El producto de id ${idObject} es: ${result}`);
+                    resolve (result);
+                }).catch((err) => {
+                    console.log('Ocurrio un error:',err);
+                    reject (err) ;
+                }).finally(() =>{
+                    knex.destroy();
+                });
+            });
         }
+
+        devolver =  await getProduct(this.knexCall())
+        .then((result) => {
+            return result;
+        });
+        return devolver;
     }
 
 /* ----- Metodo que devuelve todos los productos ----- */
     async getAll() {
-        try{
-            const contenido = await knex().from(this.tableName).select('*');
-            if (contenido.length === 0) {
-                return null;
-            } else {
-                return contenido;
-            }
-        } catch (error) {
-            console.error('Error:', error);
+        let retorno;
+        const getAllFrom = (knex) => {
+            return new Promise((resolve, reject) => {
+                knex(this.tableName).select("id", "title", "thumbnail", "price")
+                .then((result) => {
+                    console.log(`TABLA ${this.tableName}: ${result}`);
+                    resolve(result)
+                }).catch((err) => {
+                    console.log('Ocurrio un error:',err);
+                    reject(err);
+                }).finally(() =>{
+                    knex.destroy();
+                });
+            })
         }
+        retorno = await getAllFrom(this.knexCall())
+        .then( (result) => {
+            return result;
+        });
+        return retorno;                                        
     }
 
 /* ----- Metodo que elimina un producto según ID ----- */
@@ -102,36 +119,34 @@ class Contenedor {
         deleteProducts(this.knexCall());
     }
 
-    updateById(numero, objeto){
+/* ----- Metodo que elimina todos los productos de una tabla ----- */
+    updateById(idObject, objectToUpdate){
         const updateProducts = (knex) => {
-            knex('productos').where({id: numero}).update({name: 'Lavarropa'})
+            knex(this.tableName).where({id:idObject}).update(objectToUpdate)
             .then((result) => {
-                console.log(`se borraron todos los elementos(${result})`);
-                return {Hecho:`se borraron todos los elementos(${result})`}
+                console.log('Objeto Actualizado: ', objectToUpdate);
+                console.log('ID del objeto: ', idObject);
             }).catch((err) => {
-                console.log(err);
-                return {Error: err.message}
+                console.log('Error: ', err);
+            }).finally(() =>{
+                knex.destroy();
             });
         }
-        
-        updateProducts(knexMysql);
+        updateProducts(this.knexCall());
     }
 }
 
 // Creacion de la clase container
-let container = new Contenedor(options, "contenedor");
+let container = new Contenedor(options, "libreria");
 
 let prueba = {
-        name: "Sable laser",
-        price:120,
-        stock: 109,
-        code: 123456987234,
-        description:"Tremendo sable laser re fachero, original que lo uso darth vader para exterminar jedis en la orden 66.",
-        thumbnail: "https://as.com/meristation/imagenes/2021/05/05/betech/1620209195_059699_1620209343_sumario_grande.jpg"
+    title: "Biblia",
+    price: "1200",
+    thumbnail: "https://cdn1.iconfinder.com/data/icons/funeral-filloutline/64/bible-church-book-cultures-christianity-christian-religion-education-512.png"
 }
 
-// Uso del método "insert" (FUNCIONA)
-//container.insert(prueba);
+//Uso del método "insert" (FUNCIONA)
+container.insert(prueba);
 
 // Uso del método getById (NO FUNCIONA)
 //console.log(container.getById(1));
@@ -147,3 +162,5 @@ let prueba = {
 
 // Uso del método updateById
 //container.updateById(1,prueba2)
+
+module.exports = container;

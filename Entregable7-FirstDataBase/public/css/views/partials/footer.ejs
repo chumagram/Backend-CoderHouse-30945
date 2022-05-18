@@ -1,0 +1,60 @@
+<br>
+<br>
+<hr>
+<p>© Copyright 2022 - Gonzalo Leonel Gramajo</p>
+<p style="text-align: left">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum debitis, doloremque adipisci ipsum, pariatur, quod ab labore reprehenderit obcaecati facilis odit. Sint illo nisi harum blanditiis repellat iure, explicabo est. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus, magni libero? Laudantium illum quibusdam laborum magni blanditiis numquam tempora consequuntur in, nihil nulla porro? Autem numquam tempora necessitatibus nesciunt dolorum! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni aliquam ratione officia iure aliquid! Aperiam neque atque nulla impedit deserunt nihil, hic maxime necessitatibus eius et similique accusamus placeat modi. lorem ipsum dolor sit amet lorem.</p>
+<p>Contacto: gramajogonzalo@gmail.com</p>
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    const socket = io.connect();
+
+    function render(data) {
+        const html = data.map((element) => {
+            return(`<tr>
+                <td>${element.title}</td>
+                <td>${element.price}</td>
+                <td><img src=${element.thumbnail} alt="imagen de ${element.title}"></td>
+            </tr>`)
+        }).join(" ");
+        document.getElementById('tablaProductos').innerHTML = html;
+    }
+
+    function renderMessage(data) {
+        const html = data.map((element) => {
+            return(`<li style="margin-left: 20%; text-align: left;">
+                <p>${element.time} ~ <strong>${element.email}</strong></p>
+                <p>- <em>${element.message}</em></p>
+            </li>`)
+        }).join(" ");
+        document.getElementById('messages').innerHTML = html;
+    }
+
+    function addProduct(e){
+        const producto = {
+            title: document.getElementById('title').value,
+            price: document.getElementById('price').value,
+            thumbnail: document.getElementById('thumbnail').value
+        };
+        console.log(producto);
+        socket.emit('new-product', producto);
+        return false;
+    }
+
+    function addMessage(e){
+        const mensaje = {
+            email: document.getElementById('email').value,
+            message: document.getElementById('message').value
+        };
+        socket.emit('new-message', mensaje);
+        return false;
+    }
+
+    socket.on('productos', data => {
+        render(data);
+    });
+
+    socket.on('mensajeria', data => {
+        renderMessage(data);
+    });
+</script>
