@@ -1,0 +1,19 @@
+{
+  "name": "entregable9-mocks-norm",
+  "version": "1.0.0",
+  "description": "Entregable 9 sobre mocks y normalizacion para el curso de backend de coder house",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "Gonzalo Leonel Gramajo",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "faker": "^5.5.3",
+    "normalizr": "^3.6.2",
+    "socket.io": "^4.5.1"
+  }
+}

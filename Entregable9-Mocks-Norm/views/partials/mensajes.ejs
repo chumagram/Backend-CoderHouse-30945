@@ -1,0 +1,55 @@
+<h2>CENTRO DE MENSAJES - <span id="compression"></span></h2>
+<table id="tableForms">
+    <tr>
+        <td class="formArriba">
+            <h3>SI YA ERES USUARIO</h3>
+            <form onsubmit="addMessage(this)">
+                <label for="id">E-MAIL </label><input type="text" name="id" id="id" required><br>
+                <label for="message">MENSAJE </label><input type="text" name="message" id="message" required><br>
+                <input type="submit" value="ENVIAR" id="boton">
+                <br>
+            </form>
+        </td>
+        <td class="formArriba">
+            <h3>SI NO ERES USUARIO:</h3>
+            <form onsubmit="addNewUser(this)">
+                <label for="mail">
+                    E-MAIL
+                </label><input type="text" name="mail" id="mail" required><br>
+                <label for="name">
+                    NAME
+                </label><input type="text" name="name" id="name" required><br>
+                <label for="lastName">
+                    LASTNAME
+                </label><input type="text" name="lastName" id="lastName" required><br>
+                <label for="age">
+                    AGE
+                </label><input type="number" name="age" id="age" required><br>
+                <label for="alias">
+                    ALIAS
+                </label><input type="text" name="alias" id="alias" required><br>
+                <label for="avatar">
+                    AVATAR
+                </label>
+                <select id="avatar" name="avatar" required><br>
+                    <option value="/images/escudoBaratheon.webp">BARATHEON</option>
+                    <option value="/images/escudoGreyjoy.webp">GREYJOY</option>
+                    <option value="/images/escudoLannister.webp">LANNISTER</option>
+                    <option value="/images/escudoMartell.webp">MARTELL</option>
+                    <option value="/images/escudoStark.webp">STARK</option>
+                    <option value="/images/escudoTargaryen.webp">TARGARYEN</option>
+                    <option value="/images/escudoTyrell.webp">TYRELL</option>
+                </select><br>
+                <label for="text">
+                    MENSAJE
+                </label><input type="text" name="text" id="text" required><br>
+                <input type="submit" value="ENVIAR" id="boton">
+                <br>
+            </form>
+        </td>
+        <td class="formArriba" id="tablaMensajes">
+            <div id = "messages"></div>
+        </td>
+    </tr>
+</table>
+<hr>

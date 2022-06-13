@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Libreta",
+    "price": 380,
+    "thumbnail": "https://cdn1.iconfinder.com/data/icons/office-icons-17/512/ilustracoes_04-10-256.png",
+    "id": 1
+  },
+  {
+    "title": "Resaltador",
+    "price": 150,
+    "thumbnail": "https://cdn2.iconfinder.com/data/icons/education-flat-33/272/education-school-highlighter-highlight-marker-pen-office-512.png",
+    "id": 2
+  },
+  {
+    "title": "Lapicera",
+    "price": 120,
+    "thumbnail": "https://cdn2.iconfinder.com/data/icons/humano2/128x128/actions/format-text-direction-rtl.png",
+    "id": 20
+  },
+  {
+    "title": "Tijera",
+    "price": "250",
+    "thumbnail": "https://cdn3.iconfinder.com/data/icons/softwaredemo/PNG/256x256/Scissors.png",
+    "id": 21
+  },
+  {
+    "title": "Lápiz",
+    "price": "67",
+    "thumbnail": "https://cdn4.iconfinder.com/data/icons/small-n-flat/24/pencil-256.png",
+    "id": 22
+  },
+  {
+    "title": "Biblia",
+    "price": "1200",
+    "thumbnail": "https://cdn1.iconfinder.com/data/icons/funeral-filloutline/64/bible-church-book-cultures-christianity-christian-religion-education-512.png",
+    "id": 23
+  }
+]
