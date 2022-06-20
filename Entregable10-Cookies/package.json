@@ -1,0 +1,20 @@
+{
+  "name": "entregable10-cookies",
+  "version": "1.0.0",
+  "description": "Entregable 10 sobre cookies para el curso de Backend de Coder House",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "Gonzalo Gramajo",
+  "license": "ISC",
+  "dependencies": {
+    "cookie": "^0.5.0",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "mongoose": "^6.4.0",
+    "normalizr": "^3.6.2",
+    "socket.io": "^4.5.1"
+  }
+}

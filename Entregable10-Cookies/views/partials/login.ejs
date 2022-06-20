@@ -1,0 +1,77 @@
+<div id="contenedorFormsSesion">
+
+    <div id="formInicioS">
+        <h3>INICIO DE SESIÓN</h3>
+        <form>
+            <label for="email">E-MAIL </label><input type="text" name="email" id="email" required><br>
+            <input type="button" value="INICIAR SESIÓN" id="boton" onclick="login(this)">
+        </form>
+        <input onclick="mostrarCrearUsuario(this)" type="button" value="CREAR USUARIO" id="boton2">
+        <hr>
+    </div>
+
+    <div id="formRegistrarse">
+        <form onsubmit="addNewUser(this)">
+            <input onclick="ocultarCrearUsuario(this)" type="button" value="X" id="boton3">
+            <h3 id="tituloRegistrarse">REGISTRARTE</h3>
+            <br><br>
+            <table>
+                <tr>
+                    <th>
+                        <label for="mail">
+                            E-MAIL
+                        </label><input type="text" name="mail" id="mail" required><br>
+                        <label for="name">
+                            NAME
+                        </label><input type="text" name="name" id="name" required><br>
+                        <label for="lastName">
+                            LASTNAME
+                        </label><input type="text" name="lastName" id="lastName" required><br>
+                        <label for="age">
+                            AGE
+                        </label><input type="number" name="age" id="age" required><br>
+                    </th>
+                    <th>
+                        <label for="alias">
+                            ALIAS
+                        </label><input type="text" name="alias" id="alias" required><br>
+                        <label for="avatar">
+                            AVATAR
+                        </label>
+                        <select id="avatar" name="avatar" required><br>
+                            <option value="/images/escudoBaratheon.webp">BARATHEON</option>
+                            <option value="/images/escudoGreyjoy.webp">GREYJOY</option>
+                            <option value="/images/escudoLannister.webp">LANNISTER</option>
+                            <option value="/images/escudoMartell.webp">MARTELL</option>
+                            <option value="/images/escudoStark.webp">STARK</option>
+                            <option value="/images/escudoTargaryen.webp">TARGARYEN</option>
+                            <option value="/images/escudoTyrell.webp">TYRELL</option>
+                        </select><br>
+                        <label for="text">
+                            MENSAJE
+                        </label><input type="text" name="text" id="text" required><br>
+                        <input type="submit" value="REGISTARSE" id="boton">
+                        <br>
+                    </th>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+    <div id="errInitSession">
+        <input onclick="ocultarErrSession(this)" type="button" value="X" id="boton4">
+        <h2>ERROR: usuario incorrecto</h2>
+        <p>Ingrese el mail correctamente o regístrese... es gratis!</p>
+    </div>
+
+    <div id="hechoInitSession">
+        <h3>Usted a iniciado sesión</h3>
+        <p id="saludos"></p>
+    </div>
+
+    <div id="closeSession">
+        <h3>Usted ha cerrado sesión</h3>
+        <p id="despedida"></p>
+    </div>
+
+</div>
