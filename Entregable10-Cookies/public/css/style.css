@@ -1,8 +1,12 @@
 body{
     background-image:linear-gradient(rgba(20, 0, 0, 0.685),rgb(0, 0, 0)),url(../images/myBackground.jpg);
-    background-size: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
     color: rgb(255, 255, 255);
     font-family: Arial;
+    margin: 0;
 }
 footer {
     line-height: 1.5;
@@ -27,7 +31,7 @@ button {
     font-size:20px;
     border-radius: 10px;
 }
-h1,h2 {
+h1,h3 {
     margin: 20px;
 }
 .avisos {
@@ -162,7 +166,7 @@ h1,h2 {
     position: fixed;
     background-color: rgba(65, 0, 0, 0.751);
 }
-#errInitSession{
+#errInitSession,#errRegister{
     padding: 20px;
     display: none;
     z-index: 10;

@@ -12,9 +12,8 @@ class UsuariosMongo extends ContenedorMongo {
     // CREAR UN NUEVO USUARIO
     async addUser(userToAdd){
         try {
-            let doc = await this.readMongo({id: userToAdd.email});
+            let doc = await this.readMongo({id: userToAdd.id});
             if (doc.length == 0) {
-                userToAdd.session = false;
                 let created = await this.createMongo(userToAdd);
                 return { hecho: `Usuario con ID ${created[0].email} creado con éxito`};
             } else {

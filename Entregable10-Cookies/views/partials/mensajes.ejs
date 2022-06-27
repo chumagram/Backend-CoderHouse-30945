@@ -2,9 +2,9 @@
 <table id="tableForms">
     <tr>
         <td class="formArriba">
-            <form onsubmit="addMessage(this)">
+            <form>
                 <label for="message">MENSAJE </label><input type="text" name="message" id="message" required><br>
-                <input type="submit" value="ENVIAR" id="boton">
+                <input type="button" value="ENVIAR" id="boton" onclick="addMessage(this)">
                 <br>
             </form>
         </td>

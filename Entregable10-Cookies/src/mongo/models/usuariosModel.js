@@ -8,9 +8,8 @@ const UsuariosSchema = new mongoose.Schema ({
     lastname: {type: String, require: true},
     age: {type: Number, require: true},
     alias: {type: String, require: true},
-    avatar: {type: String, require: true},
-    session:{type: Boolean, require: true}
-},{versionKey: false});
+    avatar: {type: String, require: true}
+},{versionKey: false, timestamps: true});
 
 /* MensajesSchema.set('toObject',{getters: true}) */
 

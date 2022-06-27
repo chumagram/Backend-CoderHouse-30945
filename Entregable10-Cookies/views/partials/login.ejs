@@ -2,25 +2,24 @@
 
     <div id="formInicioS">
         <h3>INICIO DE SESIÓN</h3>
-        <form>
+        <form method="post" action="/login">
             <label for="email">E-MAIL </label><input type="text" name="email" id="email" required><br>
-            <input type="button" value="INICIAR SESIÓN" id="boton" onclick="login(this)">
+            <input type="submit" value="INICIAR SESIÓN" id="boton" >
         </form>
         <input onclick="mostrarCrearUsuario(this)" type="button" value="CREAR USUARIO" id="boton2">
-        <hr>
     </div>
 
     <div id="formRegistrarse">
-        <form onsubmit="addNewUser(this)">
+        <form method="post" action="/register">
             <input onclick="ocultarCrearUsuario(this)" type="button" value="X" id="boton3">
-            <h3 id="tituloRegistrarse">REGISTRARTE</h3>
+            <h3 id="tituloRegistrarse">REGISTRARSE</h3>
             <br><br>
             <table>
                 <tr>
                     <th>
-                        <label for="mail">
+                        <label for="id">
                             E-MAIL
-                        </label><input type="text" name="mail" id="mail" required><br>
+                        </label><input type="text" name="id" id="id" required><br>
                         <label for="name">
                             NAME
                         </label><input type="text" name="name" id="name" required><br>
@@ -46,11 +45,8 @@
                             <option value="/images/escudoStark.webp">STARK</option>
                             <option value="/images/escudoTargaryen.webp">TARGARYEN</option>
                             <option value="/images/escudoTyrell.webp">TYRELL</option>
-                        </select><br>
-                        <label for="text">
-                            MENSAJE
-                        </label><input type="text" name="text" id="text" required><br>
-                        <input type="submit" value="REGISTARSE" id="boton">
+                        </select><br><br>
+                        <input type="submit" value="ENVIAR" id="boton">
                         <br>
                     </th>
                 </tr>
@@ -64,14 +60,10 @@
         <p>Ingrese el mail correctamente o regístrese... es gratis!</p>
     </div>
 
-    <div id="hechoInitSession">
-        <h3>Usted a iniciado sesión</h3>
-        <p id="saludos"></p>
-    </div>
-
-    <div id="closeSession">
-        <h3>Usted ha cerrado sesión</h3>
-        <p id="despedida"></p>
+    <div id="errRegister">
+        <input onclick="ocultarErrRegister(this)" type="button" value="X" id="boton4">
+        <h2>ERROR: datos incorrectos</h2>
+        <p>Ingrese los datos correctamente para registrarse!</p>
     </div>
 
 </div>

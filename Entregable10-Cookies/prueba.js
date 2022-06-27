@@ -1,12 +1,4 @@
-let timeToExpire = Date.now() + 5000;
-let dateActual;
-
-setInterval(() => {
-    dateActual = Date.now();
-    console.log(dateActual, timeToExpire)
-    
-    if(dateActual >= timeToExpire){
-        console.log('**************************');
-        clearInterval(contToExpire);
-    }
-},1000)
+let emailUser = 'eurongreyjoy%40gmail.com'
+let username = emailUser.split('%')[0]
+let mailServer = emailUser.split('%')[1].slice(2)
+let mailClean = username + '@' + mailServer
