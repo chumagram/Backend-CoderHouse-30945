@@ -14,19 +14,22 @@ const LocalStrategy = require('passport-local').Strategy
 const usersMongo = require('./src/mongo/daos/UsuariosDaoMongo')
 const messageMongo = require('./src/mongo/daos/MensajesDaoMongo')
 const productMongo = require('./src/mongo/daos/ProductosDaoMongo')
+const io = require('./src/config/socketConfig')
 const {validatePass} = require('./src/utils/passValidator')
 const {createHash} = require('./src/utils/hashGenerator')
 
-const { Server: HttpServer } = require('http')
-const { Server: IOServer } = require('socket.io')
+const { Server: HttpServer } = require('http') 
+/* const { Server: IOServer } = require('socket.io') */
+
 const advancedOptions = {useNewUrlParser: true, useUnifiedTopology: true}
 
 // CONSTANTES
 const app = express();
 const publicPath = path.resolve(__dirname, "./public");
-const httpServer = new HttpServer(app);
-const io = new IOServer(httpServer);
 const PORT = 8080;
+
+/* const httpServer = new HttpServer(app); 
+const io = new IOServer(httpServer);  */
 
 // CONFIGURACIONES Y MIDDLEWARE
 app.use(express.static(publicPath));
@@ -206,7 +209,4 @@ app.delete('*', function(require, response){
 });
 
 // LEVANTAR SERVIDOR
-const connectedServer = httpServer.listen(PORT, () => {
-    console.log("Server HTTP con WEBSOCKETS escuchando en el puerto " + httpServer.address().port);
-});
 connectedServer.on('error', error => console.log (`Error en el servidor: ${error}`));
