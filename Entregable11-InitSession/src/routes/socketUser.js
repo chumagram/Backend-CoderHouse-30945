@@ -1,16 +1,17 @@
-//* Importaciones de las Daos necesarias 
+const { schema, normalize } = require('normalizr')
 const usersMongo = require('../mongo/daos/UsuariosDaoMongo')
 const messageMongo = require('../mongo/daos/MensajesDaoMongo')
 const productMongo = require('../mongo/daos/ProductosDaoMongo')
-//* Importaciones para socket
-const { Server: HttpServer } = require('http') 
-const { Server: IOServer } = require('socket.io') 
-const httpServer = new HttpServer(app)
-const io = new IOServer(httpServer)
 
-io.on('connection', async (socket) => {
+// NORMALIZATION SCHEMAS
+const authorSchema = new schema.Entity('authorSchema')
+const messageSchema = new schema.Entity('messageSchema',{commenter: authorSchema})
+const chat = new schema.Entity('chats', {
+    comments: [messageSchema],
+    author: authorSchema
+})
 
-    console.log('Cliente conectado');
+async function socketUser (socket) {
 
     let allProducts = await productMongo.readAllProducts();
     socket.emit('productos', allProducts);
@@ -19,14 +20,14 @@ io.on('connection', async (socket) => {
     let msjsNormalized = normalize(allMessages, [chat]);
     socket.emit('mensajeria', msjsNormalized);
 
-    // Manejo de nuevo producto
+    // nuevo producto
     socket.on('new-product', async data => {
         await productMongo.createProduct(data);
         let allProd = await productMongo.readAllProducts();
         io.sockets.emit('productos', allProd);
     })
 
-    // Manejo de nuevo mensaje
+    // nuevo mensaje
     socket.on('new-message', async data => {
         let email = data.email;
         let text = data.text;
@@ -37,11 +38,11 @@ io.on('connection', async (socket) => {
         io.sockets.emit('mensajeria', msjsNormalized);
     })
 
-    // Manejo de verificación de sesión
+    // verificación de sesión
     socket.on('session-status', async data =>{
         let user = await usersMongo.readUser(data);
         io.sockets.emit('res-session-status', user.session);
     }) 
-});
+}
 
-module.exports = io;
+module.exports = {socketUser};
