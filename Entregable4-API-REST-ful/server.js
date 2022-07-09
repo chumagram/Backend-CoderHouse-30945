@@ -40,7 +40,7 @@ router.post('/',(require,response)=>{
     response.send(`Id del producto agregado:${newId.toString()}`);
 })
 
-router.put('/:id',(require,response)=>{
+router.put('/:random',(require,response)=>{
     let id = require.params.id;
     let actualizar = require.body;
     let newObject = contenedor.updateById(id,actualizar);
