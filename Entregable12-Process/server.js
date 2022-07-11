@@ -11,6 +11,7 @@ const yargs = require('yargs/yargs')(process.argv.slice(2))
 const {socketUser} = require('./src/routes/socketUser')
 const routes = require ('./src/routes/routes')
 const {authUser} = require('./src/utils/authUser')
+const {getPort} = require('./src/utils/port')
 
 // CONFIGURACIONES
 const { Server: HttpServer } = require('http')
@@ -20,7 +21,8 @@ const app = express();
 const publicPath = path.resolve(__dirname, "./public");
 const httpServer = new HttpServer(app); 
 const io = new IOServer(httpServer); 
-const PORT = yargs.default({ p: '8080'}).argv.p; //se pueden usar los puertos 49152 al 65535 como alternativa al 8080. Éste último se usa solo para testéo y está por default
+const PORT = getPort();
+//se pueden usar los puertos 49152 al 65535 como alternativa al 8080. Éste último se usa solo para testéo y está por default
 
 // MIDDLEWARE
 app.use(express.static(publicPath));
