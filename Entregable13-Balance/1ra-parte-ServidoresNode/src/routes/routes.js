@@ -47,6 +47,44 @@ function getInfo (data) {
     return info
 }
 
+function randNumbers (req,res) {
+
+    const cluster = require('cluster');
+    const numCPUs = require('os').cpus().length;
+    const http = require('http');
+    const PORT = 8081;
+
+    //EXAMPLE: http://localhost:8080/api/randoms?cant=20000
+    let number;
+    if(req.query.cant){
+        number = parseInt(req.query.cant)
+    } else number = 10000;
+    
+    console.log(`Clustering ${numCPUs} subprocesses...`)
+
+    if(cluster.isPrimary) {
+        console.log(`Primary PID ${process.pid}`);
+
+        for (let index = 0; index < numCPUs; index++) {
+            cluster.fork(PORT)
+        }
+
+        cluster.on('online', worker =>{
+            console.log(`Worker PID ${worker.process.pid} online`);
+        })
+        cluster.on('exit', worker => {
+            console.log(`Worker PID ${worker.process.pid} died`);
+        })
+    
+    } else {
+        http.createServer((req, res) => {
+            res.writeHead(200);
+            res.end(cluster.process.id);
+        }).listen(PORT)
+        console.log('Servidor esta escuchando en el puerto 8080');
+    }
+}
+
 module.exports = {
     error404,
     getRoot,
