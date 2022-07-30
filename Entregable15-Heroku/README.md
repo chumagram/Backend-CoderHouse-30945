@@ -5,3 +5,6 @@
 4. El servidor debe seguir funcionando en forma local.
 5. Realizar un cambio a elección en alguna vista, probar en forma local y subir nuevamente el proyecto a Heroku, verificando que la nueva reforma esté disponible online.
 6. Revisar a través de una consola local, los mensajes enviados por nuestro servidor en Heroku a su propia consola.
+
+### LINK A HEROKU
+```http://school-store-server.herokuapp.com/```
