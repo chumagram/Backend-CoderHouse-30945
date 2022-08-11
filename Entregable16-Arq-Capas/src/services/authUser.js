@@ -1,8 +1,8 @@
 const passport = require('passport')
 const LocalStrategy = require('passport-local').Strategy
 
-const {validatePass} = require('./passValidator')
-const {createHash} = require('./hashGenerator')
+const {validatePass} = require('../utils/passValidator')
+const {createHash} = require('../utils/hashGenerator')
 
 const usersMongo = require('../mongo/daos/UsuariosDaoMongo')
 
@@ -45,7 +45,7 @@ function authUser(){
             }
         }
     ))
-    //& passport necesita serializar...
+
     passport.serializeUser((user, callback) => {
         callback(null, user.id) //& se pasa id porque es único en la DB
     })
@@ -55,4 +55,4 @@ function authUser(){
     })
 }
 
-module.exports = {authUser}
+module.exports = authUser
