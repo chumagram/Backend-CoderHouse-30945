@@ -1,0 +1,73 @@
+<div id="contenedorFormsSesion">
+
+    <div id="formInicioS">
+        <h3>INICIO DE SESIÓN</h3>
+        <form method="post" action="/login">
+            <label for="username">E-MAIL </label><input type="text" name="username" id="username" required><br>
+            <label for="password">CONTRASEÑA </label><input type="password" name="password" id="passwordL" required><br>
+            <input type="submit" value="INICIAR SESIÓN" id="boton" > <br>
+        </form>
+        <input onclick="mostrarCrearUsuario(this)" type="button" value="CREAR USUARIO" id="boton2">
+    </div>
+
+    <div id="formRegistrarse">
+        <form method="post" action="/signup">
+            <input onclick="ocultarCrearUsuario(this)" type="button" value="X" id="boton3">
+            <h3 id="tituloRegistrarse">REGISTRARSE</h3>
+            <br><br>
+            <table>
+                <tr>
+                    <th>
+                        <label for="username">
+                            E-MAIL
+                        </label><input type="text" name="username" id="username" required><br>
+                        <label for="name">
+                            NAME
+                        </label><input type="text" name="name" id="name" required><br>
+                        <label for="lastName">
+                            LASTNAME
+                        </label><input type="text" name="lastName" id="lastName" required><br>
+                        <label for="age">
+                            AGE
+                        </label><input type="number" name="age" id="age" required><br>
+                    </th>
+                    <th>
+                        <label for="password">
+                            CONTRASEÑA
+                        </label><input type="password" name="password" id="password" required><br>
+                        <label for="alias">
+                            ALIAS
+                        </label><input type="text" name="alias" id="alias" required><br>
+                        <label for="avatar">
+                            AVATAR
+                        </label>
+                        <select id="avatar" name="avatar" required><br>
+                            <option value="/images/escudoBaratheon.webp">BARATHEON</option>
+                            <option value="/images/escudoGreyjoy.webp">GREYJOY</option>
+                            <option value="/images/escudoLannister.webp">LANNISTER</option>
+                            <option value="/images/escudoMartell.webp">MARTELL</option>
+                            <option value="/images/escudoStark.webp">STARK</option>
+                            <option value="/images/escudoTargaryen.webp">TARGARYEN</option>
+                            <option value="/images/escudoTyrell.webp">TYRELL</option>
+                        </select><br>
+                        <input type="submit" value="ENVIAR" id="botonSingup">
+                        <br>
+                    </th>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+    <div id="errInitSession">
+        <input onclick="ocultarErrSession(this)" type="button" value="X" id="boton4">
+        <h2>ERROR: usuario incorrecto</h2>
+        <p>Ingrese el mail correctamente o regístrese... es gratis!</p>
+    </div>
+
+    <div id="errRegister">
+        <input onclick="ocultarErrRegister(this)" type="button" value="X" id="boton4">
+        <h2>ERROR: datos incorrectos</h2>
+        <p>Ingrese los datos correctamente para registrarse!</p>
+    </div>
+
+</div>
