@@ -1,0 +1,25 @@
+{
+  "name": "entregable13-balance",
+  "version": "1.0.0",
+  "description": "Entregable 13 sobre balance de carga para el curso de Backend de Coder House",
+  "main": "index.js",
+  "scripts": {
+    "test": "node benchmark.js",
+    "start": "node server.js",
+    "watch": "nodemon server.js --port=8080 --db=MongoDB",
+    "dev": "ser NODE_ENV=development&& node server.js",
+    "prod": "ser NODE_ENV=production&& node server.js"
+  },
+  "author": "Gonzalo Gramajo",
+  "license": "ISC",
+  "dependencies": {
+    "compression": "^1.7.4",
+    "connect-mongo": "^4.6.0",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "joi": "^17.6.0",
+    "log4js": "^6.6.0",
+    "mongoose": "^6.5.2",
+    "yargs": "^17.5.1"
+  }
+}
