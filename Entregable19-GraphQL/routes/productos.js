@@ -15,7 +15,7 @@ class RouterProductos {
 
         const schema = buildSchema(`
             type Producto {
-                id: ID!
+                _id: ID!
                 title: String
                 price: Int
                 thumbnail: String

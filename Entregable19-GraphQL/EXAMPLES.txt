@@ -1,0 +1,42 @@
+GUARDAR PRODUCTO
+mutation {
+  guardarProducto(datos: {title: "producto1", price: 123, thumbnail: "imagendemipriducto.com/imagen"}) {
+    title
+    price
+    thumbnail
+  }
+}
+
+OBTENER PRODUCTO
+query{
+  obtenerProducto(id: 1){
+    id
+    title
+    price
+    thumbnail
+  }
+}
+
+ACTUALIZAR PRODUCTO
+mutation {
+  actualizarProducto(id: 2, datos: {
+    title: "prodUpdated1",
+    price: 312,
+    thumbnail: "imagenactualizada.com/imagen"
+  }) {
+    _id
+    title
+    price
+    thumbnail
+  }
+}
+
+ELIMINAR PRODUCTO
+mutation {
+  borrarProductos(id:1){
+    _id
+    title
+    price
+    thumbnail
+  }
+}

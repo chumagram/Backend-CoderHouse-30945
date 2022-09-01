@@ -8,17 +8,21 @@ class ControladorProducto {
 
     obtenerProducto = async (idPasado) => {
         try {
-            let id = idPasado
+            let id = idPasado.id
             let Productos = await this.apiProductos.obtenerProductos(id)
-            return Productos
+            return Productos[0]
         } catch (error) {   
-            console.log('error obtenerProductos', error)
+            console.log('error obtenerProducto', error)
         }
     }
 
     guardarProducto = async (productoPasado) => {
         try {
-            let Producto = productoPasado.datos
+            let Producto = {
+                title: productoPasado.datos.title,
+                price: productoPasado.datos.price,
+                thumbnail: productoPasado.datos.thumbnail
+            }
             let ProductoGuardado = await this.apiProductos.guardarProducto(Producto)
             return ProductoGuardado
         } catch (error) {   
@@ -26,10 +30,14 @@ class ControladorProducto {
         }
     }
 
-    actualizarProducto = async (idPasado, productoPasado) => {
+    actualizarProducto = async (entrada) => {
         try {
-            let Producto = idPasado
-            let id = productoPasado
+            let Producto = {
+                title: entrada.datos.title,
+                price: entrada.datos.price,
+                thumbnail: entrada.datos.thumbnail
+            }
+            let id = entrada.id
             let ProductoActualizado = await this.apiProductos.actualizarProducto(id,Producto)
             return ProductoActualizado
         } catch (error) {   
@@ -39,7 +47,7 @@ class ControladorProducto {
 
     borrarProductos = async (idPasado) => {
         try {
-            let id = idPasado
+            let id = idPasado.id
             let ProductoBorrado = await this.apiProductos.borrarProductos(id)
             return ProductoBorrado
         } catch (error) {   
